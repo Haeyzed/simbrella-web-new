@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Pencil, Trash2, Search } from "lucide-react";
 import {
   Dialog,
@@ -95,12 +96,16 @@ const ServiceItem = ({ service }: { service: (typeof dummyServices)[0] }) => (
     </div>
     <div className="flex flex-col items-end justify-between">
       <div className="flex gap-2">
-        <button className="text-xs flex items-center px-2 py-2 border border-orange-200 hover:bg-secondary hover:text-white rounded-lg">
+        <Button
+          variant="edit"
+        >
           <Pencil className="w-3 h-3 mr-1" /> Edit
-        </button>
-        <button className="text-xs flex items-center px-2 py-2 border border-orange-200 hover:bg-red-700 hover:text-white rounded-lg">
+        </Button>
+        <Button
+          variant="delete"
+        >
           <Trash2 className="w-3 h-3 mr-1" /> Delete
-        </button>
+        </Button>
       </div>
     </div>
   </div>
@@ -208,9 +213,9 @@ export default function ServicesTab() {
               />
               <button
                 onClick={() => setEditBannerOpen(true)}
-                className="absolute top-3 right-3 px-3 py-2 text-xs rounded-lg border-2 bg-white border-orange-200 hover:bg-secondary hover:text-white"
+                className="flex absolute top-3 right-3 px-3 py-2 text-xs rounded-lg border-2 bg-white border-orange-200 hover:bg-secondary hover:text-white cursor-pointer"
               >
-                <Pencil className="w-4 h-4" /> <span>Edit Image</span>
+                <Pencil className="w-4 h-4 mr-1" /> <span>Edit Image</span>
               </button>
             </div>
           </section>

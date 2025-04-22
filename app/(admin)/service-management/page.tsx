@@ -18,7 +18,7 @@ export default function ServiceManagementPage() {
     <div className="w-auto mt-10">
       <div className="flex flex-col space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between space-y-6 bg-[#EFF4FF]">
+        <div className="flex items-center justify-between space-y-6 px-6 bg-[#EFF4FF]">
           <div className="flex items-center gap-4">
             <button
               className="rounded-full cursor-pointer"
@@ -30,7 +30,7 @@ export default function ServiceManagementPage() {
           </div>
 
           <Button
-            className="bg-[#FF9B21] hover:bg-[#e88c1d] text-white cursor-pointer mr-6"
+            variant="secondary"
             onClick={() => router.push("/service-management/create")}
           >
             <Plus className="h-4 w-4 mr-1" /> Add New Section
