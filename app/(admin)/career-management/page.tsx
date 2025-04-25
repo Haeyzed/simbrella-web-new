@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 
 //tabs for contact management page
 import CareerTab from "@/components/careers/career";
+import Candidates from "@/components/careers/candidates";
 
 export default function ContactManagementPage() {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function ContactManagementPage() {
         <div className="px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between gap-4 mb-16">
             <div className="flex space-x-10">
-              {["career"].map((tabKey) => (
+              {["career", "candidate"].map((tabKey) => (
                 <div key={tabKey} className="relative">
                   <button
                     className={`py-2 text-sm cursor-pointer ${
@@ -58,6 +59,7 @@ export default function ContactManagementPage() {
           {/* Tab Content */}
           <div className="bg-white -mt-10">
             {activeTab === "career" && <CareerTab />}
+            {activeTab === "candidate" && <Candidates />}
           </div>
         </div>
       </div>

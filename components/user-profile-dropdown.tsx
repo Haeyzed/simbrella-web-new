@@ -61,7 +61,7 @@ export function UserProfileDropdown({ user }: UserProfileDropdownProps) {
               src={user.profile_image_url || "/placeholder.svg"}
               alt={fullName}
             />
-            <AvatarFallback className="text-lg bg-primary">
+            <AvatarFallback className="text-lg bg-primary text-white">
               {initials}
             </AvatarFallback>
           </Avatar>

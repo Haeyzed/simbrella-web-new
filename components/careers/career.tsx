@@ -41,26 +41,26 @@ export default function CareersTab() {
         <TabsList className="mb-6">
           <TabsTrigger
             value="all"
-            className="text-gray-500 data-[state=active]:text-orange-500 cursor-pointer"
+            className="text-gray-500 data-[state=active]:text-secondary cursor-pointer"
           >
             All Jobs
           </TabsTrigger>
           <TabsTrigger
             value="open"
-            className="text-gray-500 data-[state=active]:text-orange-500 cursor-pointer"
+            className="text-gray-500 data-[state=active]:text-secondary cursor-pointer"
           >
             Open Jobs
           </TabsTrigger>
           <TabsTrigger
             value="closed"
-            className="text-gray-500 data-[state=active]:text-orange-500 cursor-pointer"
+            className="text-gray-500 data-[state=active]:text-secondary cursor-pointer"
           >
             Closed Jobs
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value={activeTab}>
-          <div className="space-y-4 w-3/5">
+          <div className="space-y-4 w-3/5 mb-10">
             {getFilteredJobs().map((job) => (
               <div
                 key={job.id}
@@ -100,7 +100,12 @@ export default function CareersTab() {
       </Tabs>
 
       <div className="mt-6">
-        <Button variant="secondary">Post New Job</Button>
+        <Button
+          variant="secondary"
+          onClick={() => router.push("/career-management/create")}
+        >
+          Post New Job
+        </Button>
       </div>
     </div>
   );
