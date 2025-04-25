@@ -2,16 +2,15 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 //tabs for contact management page
-import ContactInfoSection from "@/components/contactpage/contact-info";
-import MessageTab from "@/components/contactpage/message";
+import CareerTab from "@/components/careers/career";
 
 export default function ContactManagementPage() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState("contact");
+  const [activeTab, setActiveTab] = useState("career");
 
   return (
     <div className="w-auto mt-10">
@@ -25,7 +24,7 @@ export default function ContactManagementPage() {
             >
               <ChevronLeft className="7-5 w-7" size={25} />
             </button>
-            <h1 className="text-2xl font-semibold">Manage Contact Page</h1>
+            <h1 className="text-2xl font-semibold">Manage Careers</h1>
           </div>
 
         </div>
@@ -34,7 +33,7 @@ export default function ContactManagementPage() {
         <div className="px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between gap-4 mb-16">
             <div className="flex space-x-10">
-              {["contact", "message",].map((tabKey) => (
+              {["career"].map((tabKey) => (
                 <div key={tabKey} className="relative">
                   <button
                     className={`py-2 text-sm cursor-pointer ${
@@ -58,8 +57,7 @@ export default function ContactManagementPage() {
 
           {/* Tab Content */}
           <div className="bg-white -mt-10">
-            {activeTab === "contact" && <ContactInfoSection />}
-            {activeTab === "message" && <MessageTab />}
+            {activeTab === "career" && <CareerTab />}
           </div>
         </div>
       </div>
